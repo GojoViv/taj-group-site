@@ -23,6 +23,15 @@ import {
   Package,
   HandHeart,
   Briefcase,
+  Car,
+  Container,
+  Zap,
+  Leaf,
+  Armchair,
+  Smartphone,
+  Wrench,
+  Users,
+  Award,
 } from "lucide-react";
 
 /* ─── Reusable fade-up wrapper ─── */
@@ -299,17 +308,49 @@ export default function Home() {
             {/* Left: Philosophy */}
             <FadeIn>
               <SectionLabel>Personal Profile</SectionLabel>
-              <h2 className="font-playfair text-4xl md:text-5xl text-white font-bold mb-6 leading-tight">
+              <h2 className="font-playfair text-4xl md:text-5xl text-white font-bold mb-2 leading-tight">
                 Faizal Taj &mdash;{" "}
                 <span className="gold-gradient">The Philosophy</span>
               </h2>
+              <p className="font-playfair text-[#d4a843] text-xl italic mb-5">Global Prosperity Coach</p>
+
+              {/* 5 Focus Pillars */}
+              <div className="flex flex-wrap gap-2 mb-5">
+                {["Health", "Wealth", "Peace", "Unity", "Happiness"].map((pillar) => (
+                  <span
+                    key={pillar}
+                    className="px-4 py-1.5 rounded-full bg-[#d4a843]/15 border border-[#d4a843]/40 text-[#d4a843] text-xs font-inter font-semibold tracking-widest uppercase"
+                  >
+                    {pillar}
+                  </span>
+                ))}
+              </div>
+
               <GoldLine className="mx-0" />
-              <p className="text-white/65 text-sm leading-relaxed mb-8">
+              <p className="text-white/65 text-sm leading-relaxed mb-5">
                 A serial entrepreneur and global citizen, Faizal Taj embodies a philosophy
                 rooted in acceptance, intention and forward momentum. His personal writings
                 and coaching practice reveal a leader who has turned challenges into
                 philosophy and failure into fuel.
               </p>
+
+              {/* Philanthropy */}
+              <div className="border-l-2 border-[#d4a843]/50 pl-5 mb-7">
+                <p className="text-[#d4a843] text-xs tracking-[0.25em] uppercase font-inter mb-1">Philanthropist</p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Adopting orphans and transforming lives — doing a 180&deg; transformation
+                  in the lives of thousands of fellow human beings regardless of their differences.
+                </p>
+              </div>
+
+              {/* Mantra quote */}
+              <div className="rounded-xl border border-[#d4a843]/20 bg-[#d4a843]/5 p-6 mb-8">
+                <p className="font-playfair text-white/85 text-lg italic leading-relaxed">
+                  &ldquo;Future is always nice to be wise in our own hands in the habit of
+                  diversified investments&rdquo;
+                </p>
+                <p className="text-[#d4a843]/60 text-xs tracking-widest uppercase mt-3">— Faizal Taj</p>
+              </div>
 
               <div className="space-y-5">
                 {[
@@ -630,6 +671,241 @@ export default function Home() {
             </div>
           </FadeIn>
 
+        </div>
+      </section>
+
+      {/* ═══ TRADING VERTICALS ═══ */}
+      <section id="trading" className="py-28 px-6 md:px-12 bg-[#0a0c14]">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn className="text-center mb-16">
+            <SectionLabel>Al-Ayan — Trading Verticals</SectionLabel>
+            <h2 className="font-playfair text-4xl md:text-5xl text-white font-bold mb-4">
+              Seven Categories.{" "}
+              <span className="gold-gradient">One Trading Vision.</span>
+            </h2>
+            <GoldLine />
+            <p className="text-white/55 max-w-2xl mx-auto text-sm leading-relaxed">
+              Faizal&apos;s trading portfolio spans seven high-impact categories, backed by international
+              cargo logistics connecting Chennai, Kuala Lumpur, and beyond.
+            </p>
+          </FadeIn>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                icon: <Car size={28} />,
+                emoji: "🚗",
+                title: "Automotive",
+                desc: "Accessories & Components — quality parts and peripherals serving regional automotive markets.",
+                delay: 0,
+              },
+              {
+                icon: <Container size={28} />,
+                emoji: "📦",
+                title: "Container Systems",
+                desc: "Expandable & Housing Systems — modular container solutions for residential and commercial use.",
+                delay: 0.1,
+              },
+              {
+                icon: <Zap size={28} />,
+                emoji: "⚡",
+                title: "Electronics & Electricals",
+                desc: "Consumer and industrial electronics, electrical equipment, and Electric Vehicles (EVs).",
+                delay: 0.2,
+              },
+              {
+                icon: <Leaf size={28} />,
+                emoji: "🌿",
+                title: "Sunnah Foods",
+                desc: "Dates, Honey & Olives — ethically sourced natural foods under the Oruspoon™ brand.",
+                delay: 0.3,
+              },
+              {
+                icon: <Armchair size={28} />,
+                emoji: "🪑",
+                title: "Furniture",
+                desc: "Concept Living — curated furniture collections designed for modern, elegant living spaces.",
+                delay: 0.4,
+              },
+              {
+                icon: <Smartphone size={28} />,
+                emoji: "📱",
+                title: "Gadgets & Mobiles",
+                desc: "Consumer tech, mobile devices, and accessories for the digitally connected generation.",
+                delay: 0.5,
+              },
+              {
+                icon: <Wrench size={28} />,
+                emoji: "🔧",
+                title: "Hardware",
+                desc: "Industrial and consumer hardware supply spanning regional and international trade corridors.",
+                delay: 0.6,
+              },
+            ].map((item) => (
+              <FadeIn key={item.title} delay={item.delay}>
+                <div className="card-hover border border-white/10 rounded-xl p-7 bg-[#0f1220] h-full">
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="text-2xl">{item.emoji}</span>
+                    <div className="text-[#d4a843]">{item.icon}</div>
+                  </div>
+                  <h3 className="font-playfair text-xl text-white mb-3 font-semibold">{item.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Logistics strip */}
+          <FadeIn delay={0.4}>
+            <div className="border border-[#d4a843]/25 rounded-2xl p-8 bg-[#0f1220] text-center">
+              <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-4">International Logistics</p>
+              <p className="font-playfair text-white text-2xl md:text-3xl font-bold mb-2">
+                Chennai &nbsp;↔&nbsp; Kuala Lumpur &nbsp;↔&nbsp; Chennai
+              </p>
+              <p className="text-white/50 text-sm mt-3">
+                International Cargo routes connecting South India with Southeast Asia — enabling seamless cross-border trade across all seven verticals.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ═══ SIGNATURE SERVICES — GENERATIONAL BRIDGING ═══ */}
+      <section id="services" className="py-28 px-6 md:px-12 bg-[#0f1220]">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn className="text-center mb-16">
+            <SectionLabel>Signature Services</SectionLabel>
+            <h2 className="font-playfair text-4xl md:text-5xl text-white font-bold mb-4">
+              Coach. Mentor. Train.{" "}
+              <span className="gold-gradient">Till Success.</span>
+            </h2>
+            <GoldLine />
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            {/* One-to-One */}
+            <FadeIn delay={0.1}>
+              <div className="border border-white/10 rounded-2xl p-8 bg-[#0a0c14] h-full card-hover">
+                <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-4">One-to-One</p>
+                <h3 className="font-playfair text-2xl text-white font-bold mb-4">Business Consult, Coach &amp; Mentor</h3>
+                <div className="gold-line h-px w-16 mb-5 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent)" }} />
+                <p className="text-white/60 text-sm leading-relaxed mb-6">
+                  Personalised, intensive one-to-one engagement — consulting, coaching, mentoring, and
+                  training until success is achieved. Designed for leaders who demand results.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["CEOs", "Business Owners", "HNIs"].map((tag) => (
+                    <span key={tag} className="px-4 py-1 rounded-full bg-[#d4a843]/10 border border-[#d4a843]/30 text-[#d4a843] text-xs font-inter">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Generational Bridging — featured */}
+            <FadeIn delay={0.2}>
+              <div className="relative border-2 border-[#d4a843]/60 rounded-2xl p-8 bg-gradient-to-br from-[#d4a843]/10 to-[#0a0c14] h-full card-hover overflow-hidden">
+                {/* Glow */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle at 80% 20%, #d4a843, transparent 60%)" }} />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
+                    <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter">Signature Offering</p>
+                    <span className="px-3 py-0.5 rounded-full bg-[#d4a843] text-[#0a0c14] text-[10px] font-bold tracking-widest uppercase">Unique</span>
+                  </div>
+                  <h3 className="font-playfair text-3xl text-white font-bold mb-1">Generational Bridging</h3>
+                  <p className="font-playfair text-[#d4a843] italic text-lg mb-5">
+                    Father &amp; Son Combo Coaching
+                  </p>
+                  <div className="gold-line h-px w-16 mb-5 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent)" }} />
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">
+                    A first-of-its-kind two-generation coaching program — simultaneously developing the
+                    established leader and the next-generation heir. Bridging legacy with next-generation
+                    leadership so that nothing is lost in transition.
+                  </p>
+                  <div className="border border-[#d4a843]/30 rounded-xl p-5 bg-[#d4a843]/5">
+                    <div className="flex items-start gap-4">
+                      <Users size={20} className="text-[#d4a843] flex-shrink-0 mt-0.5" />
+                      <p className="text-white/75 text-sm leading-relaxed italic font-playfair">
+                        &ldquo;Bridging legacy with next-generation leadership.&rdquo;
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ STRATEGIC PARTNERS ═══ */}
+      <section id="partners" className="py-28 px-6 md:px-12 bg-[#0a0c14]">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn className="text-center mb-16">
+            <SectionLabel>Strategic Partners</SectionLabel>
+            <h2 className="font-playfair text-4xl md:text-5xl text-white font-bold mb-4">
+              Excite{" "}
+              <span className="gold-gradient">Growth Partner</span>
+            </h2>
+            <GoldLine />
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <div className="border border-[#d4a843]/25 rounded-2xl p-10 bg-[#0f1220] card-hover max-w-3xl mx-auto">
+              <div className="flex items-start gap-6 mb-6">
+                <div className="p-4 rounded-full border border-[#d4a843]/40 bg-[#d4a843]/10 flex-shrink-0">
+                  <Award size={28} className="text-[#d4a843]" />
+                </div>
+                <div>
+                  <h3 className="font-playfair text-2xl text-white font-bold mb-1">Z Mohamed Nassar</h3>
+                  <p className="text-[#d4a843]/80 text-sm mb-1">Co-Founder &amp; Director, Excite Marketing &amp; Training</p>
+                  <p className="text-white/45 text-xs tracking-wide uppercase">Strategic Growth Partner</p>
+                </div>
+              </div>
+
+              <div className="gold-line h-px w-full mb-6 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent 80%)" }} />
+
+              <div className="grid sm:grid-cols-2 gap-5 mb-6">
+                {[
+                  { label: "Programs Conducted", value: "6,000+" },
+                  { label: "Years of Experience", value: "20+" },
+                  { label: "BNI Role", value: "Exec. Director, BNI Coimbatore" },
+                  { label: "Network", value: "750+ Entrepreneurs" },
+                ].map((stat) => (
+                  <div key={stat.label} className="border border-white/10 rounded-xl p-4 bg-[#0a0c14]">
+                    <p className="text-[#d4a843] font-playfair text-xl font-bold mb-1">{stat.value}</p>
+                    <p className="text-white/50 text-xs tracking-wide uppercase">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mb-6">
+                <p className="text-[#d4a843] text-xs tracking-[0.25em] uppercase font-inter mb-3">Credentials</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "ICF Certified Coach (ACC)",
+                    "Certified Thomas Profile Practitioner",
+                    "BNI Executive Director",
+                  ].map((cred) => (
+                    <span key={cred} className="px-3 py-1 rounded-full bg-[#d4a843]/10 border border-[#d4a843]/25 text-[#d4a843] text-xs font-inter">
+                      {cred}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="text-[#d4a843] text-xs tracking-[0.25em] uppercase font-inter mb-3">Notable Clients</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Vodafone", "PepsiCo", "Hyundai", "Audi", "Bosch", "Nissan Renault", "Bank Muscat"].map((client) => (
+                    <span key={client} className="px-3 py-1 rounded-full border border-white/15 text-white/60 text-xs font-inter">
+                      {client}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
