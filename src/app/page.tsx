@@ -122,29 +122,6 @@ function CountryCard({ flag, country, detail, delay = 0 }: CountryCardProps) {
   );
 }
 
-/* ─── Generation card ─── */
-interface GenerationCardProps {
-  generation: string;
-  name: string;
-  title: string;
-  role: string;
-  description: string;
-  delay?: number;
-}
-function GenerationCard({ generation, name, title, role, description, delay = 0 }: GenerationCardProps) {
-  return (
-    <FadeIn delay={delay}>
-      <div className="relative border border-white/10 rounded-2xl p-8 bg-[#0f1220] h-full card-hover">
-        <div className="text-[#d4a843] text-xs tracking-[0.3em] uppercase mb-4">{generation}</div>
-        <h3 className="font-playfair text-2xl text-white font-bold mb-1">{name}</h3>
-        <p className="text-[#d4a843]/80 text-sm mb-1">{title}</p>
-        <p className="text-white/40 text-xs tracking-wide uppercase mb-5">{role}</p>
-        <div className="gold-line h-px w-16 my-4 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent)" }} />
-        <p className="text-white/60 text-sm leading-relaxed">{description}</p>
-      </div>
-    </FadeIn>
-  );
-}
 
 /* ═══════════════════════════════════════════════
    MAIN PAGE
@@ -273,30 +250,69 @@ export default function Home() {
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <GenerationCard
-              generation="First Generation — The Vision"
-              name="K. Tajudeen"
-              title="Late Founder &amp; Chairman"
-              role="The Foundation"
-              description="Late Mr. K. Tajudeen laid the foundation of TAJ Corporation with an unwavering belief in integrity, responsibility, and respect. His vision, values and principles became the moral compass that has guided every subsequent generation. His founding declaration — that every individual is to be treated with dignity, responsibility, and respect — remains the cornerstone of the enterprise to this day."
-              delay={0}
-            />
-            <GenerationCard
-              generation="Second Generation — The Evolution"
-              name="Dr. T. Saleem Basha"
-              title="Managing Director"
-              role="The Transformation"
-              description="Dr. T. Saleem Basha transitioned the family enterprise into a professionally governed, globally oriented organisation. Known for decisive, creative and forward-thinking leadership, he expanded the Group's footprint across international markets and built institutional frameworks that elevated TAJ from a family business to a respected global enterprise — preserving the founder's values while embracing modern excellence."
-              delay={0.15}
-            />
-            <GenerationCard
-              generation="Third Generation — The Future"
-              name="Mohamed Faizal Taj"
-              title="Director, Brand Ambassador &amp; Family Representative"
-              role="The Momentum"
-              description="A serial entrepreneur with a global outlook, Faizal Taj carries the family legacy into new frontiers. His focus spans strategic diversification, ecosystem creation, venture incubation, international market integration, and brand-led global expansion. He is an unofficial cultural and commercial ambassador of Indian enterprise — passionate global coach, consultant and traveller who lives by the ethos: Body. Mind. Soul."
-              delay={0.3}
-            />
+            {/* First Generation */}
+            <FadeIn delay={0}>
+              <div className="relative border border-white/10 rounded-2xl p-8 bg-[#0f1220] h-full card-hover">
+                <div className="text-[#d4a843] text-xs tracking-[0.3em] uppercase mb-4">First Generation — The Vision</div>
+                <h3 className="font-playfair text-2xl text-white font-bold mb-1">Janab K. Tajudeen</h3>
+                <p className="text-[#d4a843]/80 text-sm mb-1">Late Founder &amp; Chairman</p>
+                <p className="text-white/40 text-xs tracking-wide uppercase mb-5">The Foundation</p>
+                <div className="gold-line h-px w-16 my-4 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent)" }} />
+                <p className="text-white/60 text-sm leading-relaxed mb-5">
+                  Starting as a small transport operator serving Madras Port Trust in the early 1960s, Janab K. Tajudeen built his fleet from nothing to over 100 lorries — becoming a major force in Madras Port logistics. He founded the <span className="text-[#d4a843]/80">Chennai Harbour Lorry Owners&apos; Association</span> and was later appointed as a <span className="text-[#d4a843]/80">Customs Clearing Agent by Madras Customs House</span>, laying the foundation for what would become a multi-generational enterprise.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Madras Port Trust", "100+ Lorries", "Customs Clearing", "CHLO Association"].map((badge) => (
+                    <span key={badge} className="px-3 py-1 rounded-full bg-[#d4a843]/10 border border-[#d4a843]/30 text-[#d4a843] text-[10px] font-inter tracking-wide">
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Second Generation */}
+            <FadeIn delay={0.15}>
+              <div className="relative border border-white/10 rounded-2xl p-8 bg-[#0f1220] h-full card-hover">
+                <div className="text-[#d4a843] text-xs tracking-[0.3em] uppercase mb-4">Second Generation — The Evolution</div>
+                <h3 className="font-playfair text-2xl text-white font-bold mb-1">Dr. T. Saleem Basha</h3>
+                <p className="text-[#d4a843]/80 text-sm mb-1">Managing Director</p>
+                <p className="text-white/40 text-xs tracking-wide uppercase mb-5">The Transformation</p>
+                <div className="gold-line h-px w-16 my-4 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent)" }} />
+                <p className="text-white/60 text-sm leading-relaxed mb-4">
+                  Holding a Doctorate in Customs Clearing &amp; Forwarding and an MBA from Amity University, Singapore, Dr. Saleem Basha served as <span className="text-[#d4a843]/80">President of the Chennai Harbour Lorry Owners&apos; Association for 30 years</span>. He expanded TAJ globally — establishing offices in Australia, Dubai, Malaysia and Singapore — while building <span className="text-[#d4a843]/80">SISECO (South Indian Shipping &amp; Export Co.)</span>, customs clearing agents for 30+ years serving top Government of India undertakings.
+                </p>
+                <p className="text-[#d4a843] text-xs tracking-[0.2em] uppercase font-inter mb-2">Major Clients</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Indian Oil Corp (IOC)", "Bharat Petroleum", "Royal Enfield", "State Trading Corp", "MMTC", "Project Equipment Corp"].map((client) => (
+                    <span key={client} className="px-3 py-1 rounded-full bg-[#d4a843]/10 border border-[#d4a843]/30 text-[#d4a843] text-[10px] font-inter tracking-wide">
+                      {client}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Third Generation */}
+            <FadeIn delay={0.3}>
+              <div className="relative border border-white/10 rounded-2xl p-8 bg-[#0f1220] h-full card-hover">
+                <div className="text-[#d4a843] text-xs tracking-[0.3em] uppercase mb-4">Third Generation — The Future</div>
+                <h3 className="font-playfair text-2xl text-white font-bold mb-1">Mohamed Faizal Taj</h3>
+                <p className="text-[#d4a843]/80 text-sm mb-1">Director, Brand Ambassador &amp; Family Representative</p>
+                <p className="text-white/40 text-xs tracking-wide uppercase mb-5">The Momentum</p>
+                <div className="gold-line h-px w-16 my-4 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent)" }} />
+                <p className="text-white/60 text-sm leading-relaxed mb-4">
+                  Holding an MBA from <span className="text-[#d4a843]/80">London South Bank University, London, UK</span>, Faizal Taj leads the digital transformation and international diversification of TAJ Group. A serial entrepreneur with a global outlook, he carries the family legacy into new frontiers spanning venture incubation, international market integration, and brand-led global expansion.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["MBA, London South Bank University", "Digital Transformation", "Global Diversification"].map((badge) => (
+                    <span key={badge} className="px-3 py-1 rounded-full bg-[#d4a843]/10 border border-[#d4a843]/30 text-[#d4a843] text-[10px] font-inter tracking-wide">
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -313,6 +329,13 @@ export default function Home() {
                 <span className="gold-gradient">The Philosophy</span>
               </h2>
               <p className="font-playfair text-[#d4a843] text-xl italic mb-5">Global Prosperity Coach</p>
+
+              {/* Academic credentials */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-4 py-1.5 rounded-full bg-[#d4a843]/20 border border-[#d4a843]/60 text-[#d4a843] text-xs font-inter font-semibold tracking-wide">
+                  MBA — London South Bank University, UK
+                </span>
+              </div>
 
               {/* 5 Focus Pillars */}
               <div className="flex flex-wrap gap-2 mb-5">
@@ -992,6 +1015,230 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══ TAJ GLOBAL VILLAGE — INVESTMENT SECTION ═══ */}
+      <section id="tgv" className="py-28 px-6 md:px-12 bg-[#0a0c14] relative overflow-hidden">
+        {/* Background glow */}
+        <div
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 30% 50%, #d4a843 0%, transparent 55%), radial-gradient(circle at 75% 20%, #d4a843 0%, transparent 40%)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto relative z-10">
+
+          {/* Header */}
+          <FadeIn className="text-center mb-16">
+            <SectionLabel>Investment Opportunity</SectionLabel>
+            <h2 className="font-playfair text-4xl md:text-6xl text-white font-bold mb-3 leading-tight">
+              Invest in India&apos;s Next{" "}
+              <span className="gold-gradient">Free Trade Zone</span>
+            </h2>
+            <p className="text-[#d4a843] font-inter text-sm tracking-[0.25em] uppercase mb-4">
+              Taj Global Village Pvt. Ltd. &nbsp;&bull;&nbsp; www.tajglobalvillage.com
+            </p>
+            <GoldLine />
+            <p className="text-white/55 max-w-3xl mx-auto text-sm leading-relaxed">
+              Modelled after the Jebel Ali Free Trade Zone in Dubai, Taj Global Village (TGV) is
+              developing a world-class Free Trade Warehousing Zone (FTWZ) / Special Economic Zone (SEZ)
+              in Tamil Nadu — creating an international hub for warehousing, export manufacturing, and
+              SME incubation under Make in India / Made in Tamil Nadu.
+            </p>
+          </FadeIn>
+
+          {/* Project Overview */}
+          <FadeIn delay={0.1} className="mb-14">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="border-2 border-[#d4a843]/40 rounded-2xl p-7 bg-[#0f1220] text-center card-hover">
+                <div className="font-playfair text-4xl text-[#d4a843] font-bold mb-2">310</div>
+                <div className="text-white/70 text-sm tracking-wide uppercase font-inter">Acres Total</div>
+                <div className="text-white/40 text-xs mt-1">40% already acquired</div>
+              </div>
+              <div className="border-2 border-[#d4a843]/40 rounded-2xl p-7 bg-[#0f1220] text-center card-hover">
+                <div className="font-playfair text-2xl text-[#d4a843] font-bold mb-2 leading-tight">Kancheepuram</div>
+                <div className="text-white/70 text-sm tracking-wide uppercase font-inter">Tamil Nadu</div>
+                <div className="text-white/40 text-xs mt-1">Chennai–Bangalore National Highway</div>
+              </div>
+              <div className="border-2 border-[#d4a843]/40 rounded-2xl p-7 bg-[#0f1220] text-center card-hover">
+                <div className="font-playfair text-4xl text-[#d4a843] font-bold mb-2">SEZ</div>
+                <div className="text-white/70 text-sm tracking-wide uppercase font-inter">Free Trade Zone</div>
+                <div className="text-white/40 text-xs mt-1">FTWZ / Special Economic Zone</div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Investment Highlights */}
+          <FadeIn delay={0.15} className="mb-14">
+            <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-8 text-center">
+              Investment Highlights
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                {
+                  label: "Total ROI",
+                  value: "13% p.a.",
+                  sub: "vs 5.5% bank FD",
+                  highlight: true,
+                },
+                {
+                  label: "Price Per Acre",
+                  value: "₹58 Lakhs",
+                  sub: "All-in: land + registration + development",
+                  highlight: false,
+                },
+                {
+                  label: "Title Deed",
+                  value: "Your Name",
+                  sub: "Land registered directly in investor's name",
+                  highlight: false,
+                },
+                {
+                  label: "Buy-Back Guarantee",
+                  value: "After 5 Yrs",
+                  sub: "Min. 25% capital appreciation guaranteed",
+                  highlight: false,
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className={`rounded-2xl p-7 text-center card-hover ${
+                    item.highlight
+                      ? "border-2 border-[#d4a843] bg-gradient-to-br from-[#d4a843]/15 to-[#0f1220]"
+                      : "border border-white/10 bg-[#0f1220]"
+                  }`}
+                >
+                  <div className={`font-playfair text-3xl font-bold mb-2 ${item.highlight ? "text-[#d4a843]" : "text-white"}`}>
+                    {item.value}
+                  </div>
+                  <div className="text-white/70 text-xs tracking-widest uppercase font-inter mb-1">{item.label}</div>
+                  <div className="text-white/40 text-xs leading-relaxed">{item.sub}</div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* ROI Table */}
+          <FadeIn delay={0.2} className="mb-14">
+            <div className="border border-[#d4a843]/30 rounded-2xl overflow-hidden bg-[#0f1220]">
+              <div className="px-8 py-5 border-b border-[#d4a843]/20 bg-[#d4a843]/5">
+                <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter">Returns Breakdown — Per Acre (₹58L Investment)</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left px-8 py-4 text-white/40 text-xs tracking-widest uppercase font-inter">Return Type</th>
+                      <th className="text-right px-6 py-4 text-white/40 text-xs tracking-widest uppercase font-inter">Rate</th>
+                      <th className="text-right px-8 py-4 text-white/40 text-xs tracking-widest uppercase font-inter">Amount / Year</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { type: "Lease Rental (half-yearly)", rate: "7% p.a.", amount: "₹4,06,000", note: "" },
+                      { type: "Incentive (every 5 years)", rate: "1% p.a.", amount: "₹58,000", note: "" },
+                      { type: "Capital Appreciation (Buy Back)", rate: "5% p.a.", amount: "₹2,90,000", note: "" },
+                    ].map((row) => (
+                      <tr key={row.type} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                        <td className="px-8 py-4 text-white/70 text-sm">{row.type}</td>
+                        <td className="px-6 py-4 text-[#d4a843] text-sm text-right font-inter">{row.rate}</td>
+                        <td className="px-8 py-4 text-white/70 text-sm text-right font-inter">{row.amount}</td>
+                      </tr>
+                    ))}
+                    {/* Total row */}
+                    <tr className="bg-[#d4a843]/10 border-t-2 border-[#d4a843]/40">
+                      <td className="px-8 py-5 text-white font-playfair font-bold text-base">Total ROI</td>
+                      <td className="px-6 py-5 text-[#d4a843] font-bold text-lg text-right font-playfair">13% p.a.</td>
+                      <td className="px-8 py-5 text-[#d4a843] font-bold text-lg text-right font-playfair">₹7,54,000</td>
+                    </tr>
+                    {/* Comparison row */}
+                    <tr className="border-t border-white/5">
+                      <td className="px-8 py-4 text-white/40 text-sm italic">Bank FD (for comparison)</td>
+                      <td className="px-6 py-4 text-white/40 text-sm text-right font-inter">5.5%</td>
+                      <td className="px-8 py-4 text-white/40 text-sm text-right font-inter">₹3,19,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Infrastructure & Terms */}
+          <div className="grid md:grid-cols-2 gap-8 mb-14">
+            <FadeIn delay={0.25}>
+              <div className="border border-white/10 rounded-2xl p-8 bg-[#0f1220] h-full">
+                <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-5">Infrastructure Included</p>
+                <ul className="space-y-3">
+                  {[
+                    "60-ft road access from National Highway",
+                    "Land levelling & compound wall",
+                    "Internal cement roads",
+                    "Solar power installation",
+                    "Water & electricity connections",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-white/65 text-sm leading-relaxed">
+                      <span className="text-[#d4a843] mt-0.5 flex-shrink-0">▸</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <div className="border border-white/10 rounded-2xl p-8 bg-[#0f1220] h-full">
+                <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-5">Investment Terms</p>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                    <span className="text-white/55 text-sm">Minimum Investment</span>
+                    <span className="text-white font-inter font-semibold">1 Acre</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                    <span className="text-white/55 text-sm">Maximum Investment</span>
+                    <span className="text-white font-inter font-semibold">10 Acres</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                    <span className="text-white/55 text-sm">Price Per Acre</span>
+                    <span className="text-[#d4a843] font-playfair font-bold text-lg">₹58 Lakhs</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                    <span className="text-white/55 text-sm">Lease Rental</span>
+                    <span className="text-white font-inter font-semibold">Half-yearly</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/55 text-sm">Buy-Back Option</span>
+                    <span className="text-white font-inter font-semibold">After 5 years</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* CTA */}
+          <FadeIn delay={0.35} className="text-center">
+            <div className="border-2 border-[#d4a843]/60 rounded-2xl p-10 bg-gradient-to-br from-[#d4a843]/10 to-[#0a0c14] max-w-2xl mx-auto">
+              <p className="font-playfair text-white text-2xl font-bold mb-2">
+                Secure Your Acre in India&apos;s Next SEZ
+              </p>
+              <p className="text-white/55 text-sm mb-8 leading-relaxed">
+                Land registered in your name. Title deeds handed over. 13% p.a. returns.
+                A nation-building investment with institutional-grade security.
+              </p>
+              <a
+                href="mailto:faiztaj@mail.com?subject=TGV Investment Inquiry — Taj Global Village"
+                className="inline-flex items-center gap-2 px-10 py-4 bg-[#d4a843] text-[#0a0c14] font-bold rounded-full text-sm tracking-wide hover:bg-[#e8c470] transition-colors"
+              >
+                <Mail size={18} />
+                Inquire About Investment
+              </a>
+              <p className="text-white/30 text-xs mt-4">
+                www.tajglobalvillage.com &nbsp;&bull;&nbsp; faiztaj@mail.com
+              </p>
+            </div>
+          </FadeIn>
+
         </div>
       </section>
 
