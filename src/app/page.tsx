@@ -469,6 +469,170 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══ AABCD SECTION ═══ */}
+      <section id="aabcd" className="py-28 px-6 md:px-12 bg-[#0f1220]">
+        <div className="max-w-6xl mx-auto">
+
+          {/* Header */}
+          <FadeIn className="text-center mb-6">
+            <SectionLabel>Business Platform</SectionLabel>
+            <h2 className="font-playfair text-5xl md:text-7xl text-[#d4a843] font-bold mb-3 tracking-tight">
+              AABCD
+            </h2>
+            <p className="text-white/70 text-lg md:text-xl mb-4 font-inter tracking-wide">
+              Asia Africa Business Community Development
+            </p>
+            <div className="flex justify-center mb-4">
+              <span className="px-4 py-1.5 rounded-full border border-[#d4a843]/40 text-[#d4a843] text-xs tracking-[0.25em] uppercase">
+                Launched 2016 &bull; Malaysia
+              </span>
+            </div>
+            <GoldLine />
+          </FadeIn>
+
+          {/* Mission Statement */}
+          <FadeIn delay={0.1} className="text-center mb-20">
+            <p className="font-playfair text-2xl md:text-4xl text-white/90 italic leading-relaxed max-w-4xl mx-auto">
+              &ldquo;Nurturing 1,000 SMEs into globalisation.
+              <br className="hidden md:block" /> One community at a time.&rdquo;
+            </p>
+            <p className="text-white/45 text-sm mt-6 max-w-2xl mx-auto leading-relaxed">
+              Founded by Mr. Mohamed Faizal — 3rd generation TAJ Group entrepreneur — AABCD is an
+              international wealth management &amp; consulting company built to uplift the Indian
+              Business Community on a global stage. Focus markets span India, Malaysia, Singapore,
+              the Middle East and Africa.
+            </p>
+          </FadeIn>
+
+          {/* ABCD Cards */}
+          <FadeIn delay={0.15} className="mb-20">
+            <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-8 text-center">
+              What ABCD Stands For
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+              {[
+                { letter: "A", label: "Assets", desc: "Wealth structuring, asset management & capital growth strategies." },
+                { letter: "B", label: "Business", desc: "Business development, franchising, consulting & cross-border expansion." },
+                { letter: "C", label: "Charity", desc: "Social responsibility, community uplifting & ethical finance principles." },
+                { letter: "D", label: "Design", desc: "Branding, identity, creative direction & professional image building." },
+              ].map((item, i) => (
+                <FadeIn key={item.letter} delay={0.1 + i * 0.1}>
+                  <div className="border border-[#d4a843]/25 rounded-2xl p-7 bg-[#0a0c14] text-center card-hover h-full">
+                    <div className="font-playfair text-5xl text-[#d4a843] font-bold mb-2 leading-none">
+                      {item.letter}
+                    </div>
+                    <h4 className="font-playfair text-white text-lg font-semibold mb-3">{item.label}</h4>
+                    <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Who We Serve */}
+          <FadeIn delay={0.2} className="mb-20 text-center">
+            <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-6">
+              Who We Serve
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {["Startups", "Entrepreneurs", "SMEs", "Corporates", "CEOs", "HNIs", "Franchise Owners"].map((tag, i) => (
+                <FadeIn key={tag} delay={0.05 * i}>
+                  <span className="px-5 py-2 rounded-full bg-[#d4a843]/10 border border-[#d4a843]/30 text-[#d4a843] text-sm font-inter tracking-wide">
+                    {tag}
+                  </span>
+                </FadeIn>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Services Grid */}
+          <FadeIn delay={0.25} className="mb-16">
+            <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-8 text-center">
+              Services
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                {
+                  title: "Consulting & Coaching",
+                  desc: "Expert mentoring and strategic coaching programs that transform business leaders into global changemakers.",
+                },
+                {
+                  title: "Business Development",
+                  desc: "Franchising, expansions, bouquet services, launch pads and structured business bridging across markets.",
+                },
+                {
+                  title: "Islamic Finance & Ethical Funding",
+                  desc: "Ethical Etiquette Funding rooted in Islamic Finance principles — responsible capital for sustainable growth.",
+                },
+                {
+                  title: "Cross-Border Expansion",
+                  desc: "Enabling SMEs and corporates to expand internationally through structured cross-country strategy and fund raising.",
+                },
+                {
+                  title: "Branding & Training",
+                  desc: "Professional branding programs and training curricula designed to position businesses for global markets.",
+                },
+                {
+                  title: "Events & Launch Pads",
+                  desc: "High-impact networking events, entrepreneur summits and curated launch platforms across Asia and Africa.",
+                },
+              ].map((service, i) => (
+                <FadeIn key={service.title} delay={0.08 * i}>
+                  <div className="border border-white/10 rounded-xl p-6 bg-[#0a0c14] h-full card-hover">
+                    <h4 className="font-playfair text-white text-base font-semibold mb-2">{service.title}</h4>
+                    <div className="gold-line h-px w-10 mb-3 mx-0" style={{ background: "linear-gradient(90deg, #d4a843, transparent)" }} />
+                    <p className="text-white/55 text-sm leading-relaxed">{service.desc}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Revenue & Values strip */}
+          <FadeIn delay={0.3}>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Revenue Streams */}
+              <div className="border border-[#d4a843]/20 rounded-2xl p-8 bg-[#0a0c14]">
+                <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-5">Revenue Streams</p>
+                <ul className="space-y-3">
+                  {[
+                    "Memberships — Premium / Mastermind / Business Connect",
+                    "Consulting & Coaching Programs",
+                    "Branding & Training Programs",
+                    "Entrepreneur Incubation & Fund Raising",
+                    "Events, Launch Pads & Networking",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-white/65 text-sm leading-relaxed">
+                      <span className="text-[#d4a843] mt-0.5 flex-shrink-0">▸</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Values */}
+              <div className="border border-white/10 rounded-2xl p-8 bg-[#0a0c14]">
+                <p className="text-[#d4a843] text-xs tracking-[0.3em] uppercase font-inter mb-5">Core Values</p>
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { label: "Process Driven", desc: "Systematic, repeatable frameworks that scale." },
+                    { label: "Human Development", desc: "People first — leaders who uplift communities." },
+                    { label: "Collaboration", desc: "Partnerships and ecosystems over competition." },
+                    { label: "Customisation", desc: "Tailored solutions for every SME and leader." },
+                  ].map((v) => (
+                    <div key={v.label} className="p-4 border border-white/5 rounded-xl">
+                      <div className="font-playfair text-[#d4a843] text-sm font-semibold mb-1">{v.label}</div>
+                      <p className="text-white/45 text-xs leading-relaxed">{v.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+        </div>
+      </section>
+
       {/* ═══ GLOBAL PRESENCE ═══ */}
       <section id="presence" className="py-28 px-6 md:px-12 bg-[#0f1220]">
         <div className="max-w-5xl mx-auto">
