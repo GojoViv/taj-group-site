@@ -17,6 +17,12 @@ import {
   Star,
   Heart,
   Shield,
+  Phone,
+  MapPin,
+  TrendingUp,
+  Package,
+  HandHeart,
+  Briefcase,
 } from "lucide-react";
 
 /* ─── Reusable fade-up wrapper ─── */
@@ -176,7 +182,7 @@ export default function Home() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-[#d4a843] text-xs tracking-[0.4em] uppercase mb-8"
           >
-            Three Generations &bull; Seven Platforms &bull; One Vision
+            Three Generations &bull; Eleven Platforms &bull; One Vision
           </motion.p>
 
           <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-4 leading-none tracking-tight">
@@ -381,7 +387,7 @@ export default function Home() {
           <FadeIn className="text-center mb-16">
             <SectionLabel>Business Platforms</SectionLabel>
             <h2 className="font-playfair text-4xl md:text-5xl text-white font-bold mb-4">
-              Seven Verticals.{" "}
+              Eleven Verticals.{" "}
               <span className="gold-gradient">One Integrated Vision.</span>
             </h2>
             <GoldLine />
@@ -429,14 +435,35 @@ export default function Home() {
               description="Consumer retail brand with active operations in India. Bringing quality, trust and the TAJ heritage directly to everyday consumers through a strong retail presence."
               delay={0.5}
             />
-          </div>
-
-          <div className="max-w-sm mx-auto">
             <PlatformCard
               icon={<Store size={28} />}
               title="DFO — Direct Factory Outlet"
               description="International retail operations in Singapore and Malaysia, offering premium products at accessible price points. TAJ Corporation's consumer-facing bridge to Southeast Asian markets."
               delay={0.6}
+            />
+            <PlatformCard
+              icon={<TrendingUp size={28} />}
+              title="Al Faizal Trading Pvt. Ltd."
+              description="Trading operations spanning domestic and international markets. A dedicated trading arm that drives commercial exchange across industries and geographies under the TAJ banner."
+              delay={0.7}
+            />
+            <PlatformCard
+              icon={<Package size={28} />}
+              title="All Port Logistics"
+              description="Port and logistics services providing end-to-end supply chain solutions. Connecting trade networks through efficient port operations and freight management across key maritime corridors."
+              delay={0.8}
+            />
+            <PlatformCard
+              icon={<HandHeart size={28} />}
+              title="Taj Charitable"
+              description="Social responsibility and charitable initiatives that give back to communities. Embodying the founder's values of dignity, responsibility and respect through meaningful social impact."
+              delay={0.9}
+            />
+            <PlatformCard
+              icon={<Briefcase size={28} />}
+              title="Taj Holding &amp; Investment"
+              description="Holdings and investment vehicle overseeing the Group's capital allocation, asset management and long-term investment strategy across sectors and geographies."
+              delay={1.0}
             />
           </div>
         </div>
@@ -453,16 +480,19 @@ export default function Home() {
             </h2>
             <GoldLine />
             <p className="text-white/55 max-w-lg mx-auto text-sm leading-relaxed">
-              TAJ Corporation maintains active operations across four strategic markets —
+              TAJ Corporation maintains active operations across seven strategic markets —
               each chosen for its role in the global economy and TAJ&apos;s long-term enterprise vision.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
-            <CountryCard flag="🇲🇾" country="Malaysia" detail="Southeast Asia Hub" delay={0} />
-            <CountryCard flag="🇸🇬" country="Singapore" detail="DFO Retail &amp; Finance" delay={0.1} />
-            <CountryCard flag="🇦🇪" country="Dubai, UAE" detail="Global Trade Gateway" delay={0.2} />
-            <CountryCard flag="🇮🇳" country="Chennai, India" detail="Headquarters &amp; Origin" delay={0.3} />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-16">
+            <CountryCard flag="🇮🇳" country="India" detail="Headquarters &amp; Origin" delay={0} />
+            <CountryCard flag="🇲🇾" country="Malaysia" detail="Southeast Asia Hub" delay={0.1} />
+            <CountryCard flag="🇸🇬" country="Singapore" detail="DFO Retail &amp; Finance" delay={0.2} />
+            <CountryCard flag="🇦🇪" country="UAE" detail="Global Trade Gateway" delay={0.3} />
+            <CountryCard flag="🇬🇧" country="United Kingdom" detail="European Operations" delay={0.4} />
+            <CountryCard flag="🇦🇺" country="Australia" detail="Asia-Pacific Presence" delay={0.5} />
+            <CountryCard flag="🇨🇳" country="China" detail="East Asia Corridor" delay={0.6} />
           </div>
 
           <FadeIn>
@@ -542,11 +572,11 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <a
-                href="mailto:info@tajgroup.in"
+                href="mailto:faiztaj@mail.com"
                 className="flex items-center justify-center gap-2 px-8 py-4 bg-[#d4a843] text-[#0a0c14] font-semibold rounded-full hover:bg-[#e8c470] transition-colors"
               >
                 <Mail size={18} />
-                info@tajgroup.in
+                faiztaj@mail.com
               </a>
               <a
                 href="https://wa.me/601234567890"
@@ -557,6 +587,46 @@ export default function Home() {
                 <MessageCircle size={18} />
                 WhatsApp
               </a>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-6 mb-10 text-left">
+              <FadeIn delay={0.1}>
+                <div className="border border-white/10 rounded-xl p-6 bg-[#0a0c14]">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Phone size={16} className="text-[#d4a843] flex-shrink-0" />
+                    <span className="text-[#d4a843] text-xs tracking-widest uppercase">Phone</span>
+                  </div>
+                  <p className="text-white/70 text-sm leading-relaxed">+91 44 2345 4044</p>
+                  <p className="text-white/70 text-sm leading-relaxed">+91 95 4333 4444</p>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <div className="border border-white/10 rounded-xl p-6 bg-[#0a0c14]">
+                  <div className="flex items-center gap-3 mb-3">
+                    <MapPin size={16} className="text-[#d4a843] flex-shrink-0" />
+                    <span className="text-[#d4a843] text-xs tracking-widest uppercase">Address</span>
+                  </div>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    55-A, Santhome High Road<br />Chennai, India
+                  </p>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.3}>
+                <div className="border border-white/10 rounded-xl p-6 bg-[#0a0c14]">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Globe size={16} className="text-[#d4a843] flex-shrink-0" />
+                    <span className="text-[#d4a843] text-xs tracking-widest uppercase">Website</span>
+                  </div>
+                  <a
+                    href="https://tajgroup.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 text-sm hover:text-[#d4a843] transition-colors inline-flex items-center gap-1.5"
+                  >
+                    tajgroup.in <ExternalLink size={12} />
+                  </a>
+                </div>
+              </FadeIn>
             </div>
 
             <a
@@ -583,7 +653,7 @@ export default function Home() {
             </span>
           </div>
           <div className="text-center md:text-right">
-            <div className="mb-1">Malaysia &bull; Singapore &bull; Dubai &bull; Chennai</div>
+            <div className="mb-1">India &bull; Malaysia &bull; Singapore &bull; UAE &bull; UK &bull; Australia &bull; China</div>
             <div>&copy; {new Date().getFullYear()} TAJ Corporation. All rights reserved.</div>
           </div>
         </div>
